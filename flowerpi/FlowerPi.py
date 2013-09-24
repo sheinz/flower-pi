@@ -1,6 +1,5 @@
-#!/usr/bin/env python
 
-from time import sleep
+
 from Hardware import Hardware
 from datetime import datetime
 from astral import Astral
@@ -31,16 +30,3 @@ class FlowerPi(object):
             print("Sunset. Time: {}".format(str(now)))
             self.hardware.turn_lamp_off()
             
-
-def main():
-    try:
-        flower_pi = FlowerPi()
-        while True:
-            flower_pi.process()
-            sleep(30)
-    except KeyboardInterrupt:
-        print("Stop processing")
-            
-
-if __name__ == "__main__": 
-    main()

@@ -1,0 +1,17 @@
+#!/usr/bin/env python
+
+from time import sleep
+from flowerpi.FlowerPi import FlowerPi
+
+def main():
+    try:
+        flower_pi = FlowerPi()
+        while True:
+            flower_pi.process()
+            sleep(30)
+    except KeyboardInterrupt:
+        print("Stop processing")
+            
+
+if __name__ == "__main__": 
+    main()
