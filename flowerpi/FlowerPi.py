@@ -1,8 +1,8 @@
-
-
-from Hardware import Hardware
 from datetime import datetime
 from astral import Astral
+
+from Hardware import Hardware
+from RPCServer import RPCServer
 
 
 class FlowerPi(object):
@@ -12,6 +12,8 @@ class FlowerPi(object):
         a = Astral()
         a.solar_depression = 'civil'
         self.city = a['Kiev']
+        self.rpc_server = RPCServer(self.hardware) 
+        self.rpc_server.start()
         
         
     def process(self):
